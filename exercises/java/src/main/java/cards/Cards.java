@@ -1,5 +1,7 @@
 package cards;
 
+import java.util.ArrayList;
+
 public class Cards {
     public static void main(String[] args) {
         Cards cards = new Cards();
@@ -10,21 +12,14 @@ public class Cards {
     }
 
     String[] getCards() {
-        String[] result = new String[52];
-        Card[] deckOfCards = new Card[52];
+        ArrayList<String> result = new ArrayList<>();
+        Card[] deckOfCards = new Deck().getCards();
 
-        for (int suit = 0; suit < 4; suit++) {
-            for (int faceValue = 0; faceValue < 13; faceValue++) {
-                deckOfCards[suit*13+faceValue] = new Card(faceValue, suit);
-            }
-        }
-
-        int cardCount = 0;
         for (Card card : deckOfCards){
-            result[cardCount] = card.toString();
-            cardCount++;
+            result.add(card.toString());
         }
 
-        return result;
+        return result.toArray(new String[52]);
     }
+
 }
