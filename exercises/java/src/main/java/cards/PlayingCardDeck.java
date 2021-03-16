@@ -1,42 +1,39 @@
 package cards;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class PlayingCardDeck implements Deck{
-    private final PlayingCard[] deckOfCards;
+    private final List<PlayingCard> deckOfCards;
 
     public PlayingCardDeck() {
-        deckOfCards = new PlayingCard[52];
+        deckOfCards = new ArrayList<>();
         for (int suit = 0; suit < 4; suit++) {
             for (int faceValue = 0; faceValue < 13; faceValue++) {
-                deckOfCards[suit*13+faceValue] = new PlayingCard(faceValue, suit);
+                deckOfCards.add(new PlayingCard(faceValue, suit));
             }
         }
     }
 
-    PlayingCard[] getPlayingCards() {
-        return deckOfCards;
-    }
-
     @Override
     public void shuffle() {
-
+        Collections.shuffle(deckOfCards);
     }
 
     @Override
     public Card deal() {
-        return null;
+        return deckOfCards.remove(0);
     }
 
     @Override
     public String[] getCardNames() {
         ArrayList<String> result = new ArrayList<>();
-        PlayingCard[] deckOfCards = getPlayingCards();
 
-        for (PlayingCard card : deckOfCards){
+        for (PlayingCard card : this.deckOfCards){
             result.add(card.toString());
         }
 
-        return result.toArray(new String[52]);
+        return result.toArray(new String[deckOfCards.size()]);
     }
 }
