@@ -21,7 +21,7 @@ class Snap {
         Scanner scanner = new Scanner(System.in);
 
         Card previousCard = null;
-        while (deck.getCards().length > 0) {
+        while (deck.getCardNames().length > 0) {
             Card currentCard = deck.deal();
             System.out.println(currentCard);
             String input = scanner.nextLine();

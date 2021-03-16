@@ -3,7 +3,7 @@ package cards;
 public interface Deck {
     void shuffle();
 
-    String[] getCards();
+    String[] getCardNames();
 
     Card deal();
 }

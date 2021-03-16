@@ -22,7 +22,7 @@ class AnimalDeck implements Deck {
     }
 
     @Override
-    public String[] getCards() {
+    public String[] getCardNames() {
         String[] result = new String[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             AnimalCard card = cards.get(i);
