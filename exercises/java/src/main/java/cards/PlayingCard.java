@@ -1,6 +1,6 @@
 package cards;
 
-public class PlayingCard {
+public class PlayingCard implements Card{
     String faceValueString;
     String suitString;
 
@@ -45,5 +45,11 @@ public class PlayingCard {
     @Override
     public String toString() {
         return faceValueString + " of " + suitString;
+    }
+
+
+    @Override
+    public boolean snap(Card otherCard) {
+        return otherCard != null && otherCard instanceof PlayingCard && ((PlayingCard)otherCard).faceValueString.equals(this.faceValueString);
     }
 }
