@@ -1,10 +1,15 @@
 package cards;
 
-import java.util.List;
-
 public class MixedDeck extends BaseDeck {
     public MixedDeck() {
-        cards.addAll(new AnimalDeck().cards);
-        cards.addAll(new PlayingCardDeck().cards);
+        Deck animalDeck = new AnimalDeck();
+        while (animalDeck.areCardsRemaining()){
+            cards.add(animalDeck.deal());
+        }
+
+        Deck playingCardDeck = new PlayingCardDeck();
+        while (playingCardDeck.areCardsRemaining()){
+            cards.add(playingCardDeck.deal());
+        }
     }
 }

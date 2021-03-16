@@ -1,7 +1,5 @@
 package cards;
 
-import java.util.ArrayList;
-
 class AnimalDeck extends BaseDeck {
 
     public AnimalDeck() {

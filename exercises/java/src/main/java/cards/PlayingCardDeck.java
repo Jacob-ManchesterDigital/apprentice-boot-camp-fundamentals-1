@@ -1,7 +1,5 @@
 package cards;
 
-import java.util.ArrayList;
-
 public class PlayingCardDeck extends BaseDeck{
 
     public PlayingCardDeck() {

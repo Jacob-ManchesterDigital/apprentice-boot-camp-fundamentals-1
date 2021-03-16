@@ -10,7 +10,7 @@ public abstract class BaseDeck implements Deck {
 
     @Override
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(this.cards);
     }
 
     @Override
@@ -21,11 +21,15 @@ public abstract class BaseDeck implements Deck {
             result.add(card.toString());
         }
 
-        return result.toArray(new String[cards.size()]);
+        return result.toArray(new String[this.cards.size()]);
     }
 
     @Override
     public Card deal() {
-        return cards.remove(0);
+        return this.cards.remove(0);
+    }
+
+    public boolean areCardsRemaining() {
+        return !this.cards.isEmpty();
     }
 }

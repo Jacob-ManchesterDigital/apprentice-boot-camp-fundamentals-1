@@ -6,4 +6,6 @@ public interface Deck {
     String[] getCardNames();
 
     Card deal();
+
+    boolean areCardsRemaining();
 }
