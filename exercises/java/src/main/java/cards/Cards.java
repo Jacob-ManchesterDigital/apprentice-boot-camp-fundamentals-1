@@ -13,9 +13,9 @@ public class Cards {
 
     String[] getCards() {
         ArrayList<String> result = new ArrayList<>();
-        Card[] deckOfCards = new Deck().getCards();
+        PlayingCard[] deckOfCards = new PlayingCardDeck().getCards();
 
-        for (Card card : deckOfCards){
+        for (PlayingCard card : deckOfCards){
             result.add(card.toString());
         }
 

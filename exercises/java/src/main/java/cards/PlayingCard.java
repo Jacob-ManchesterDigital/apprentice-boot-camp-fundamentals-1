@@ -1,10 +1,10 @@
 package cards;
 
-public class Card {
+public class PlayingCard {
     String faceValueString;
     String suitString;
 
-    public Card(int faceValue, int suit) {
+    public PlayingCard(int faceValue, int suit) {
         this.faceValueString = convertFaceValueString(faceValue);
         this.suitString =  convertSuitString(suit);
     }
