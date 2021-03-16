@@ -16,7 +16,7 @@ public class PlayingCard implements Card{
             case 1: suitString = "diamonds"; break;
             case 2: suitString = "hearts"; break;
             case 3: suitString = "spades"; break;
-            default: throw new IllegalArgumentException("Something went wrong " + suit + "is not a valid suitName!");
+            default: throw new IllegalArgumentException("Exception " + suit + "is not a valid suitName!");
         }
         return suitString;
     }
@@ -37,7 +37,7 @@ public class PlayingCard implements Card{
             case 10: faceValueString = "jack"; break;
             case 11: faceValueString = "queen"; break;
             case 12: faceValueString = "king"; break;
-            default: throw new IllegalArgumentException("Something went wrong " + faceValue + "is not a valid faceValue!");
+            default: throw new IllegalArgumentException("Exception " + faceValue + "is not a valid faceValue!");
         }
         return faceValueString;
     }
@@ -50,6 +50,7 @@ public class PlayingCard implements Card{
 
     @Override
     public boolean snap(Card otherCard) {
-        return otherCard != null && otherCard instanceof PlayingCard && ((PlayingCard)otherCard).faceValueString.equals(this.faceValueString);
+        return otherCard instanceof PlayingCard
+                && ((PlayingCard) otherCard).faceValueString.equals(this.faceValueString);
     }
 }
