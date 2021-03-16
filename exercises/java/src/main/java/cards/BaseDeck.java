@@ -5,7 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseDeck implements Deck {
-    protected List<Card> cards;
+    protected List<Card> cards = new ArrayList<>();;
+
 
     @Override
     public void shuffle() {
